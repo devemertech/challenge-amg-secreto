@@ -46,7 +46,19 @@ function sortearAmigo() {
 
     const resultado = document.getElementById("resultado");
     resultado.innerHTML = `<li>Amigo sorteado: <strong>${sorteado}</strong></li>`;
+       
+    setTimeout(() => {
+        reiniciarJogo();
+    }, 3000);
+}
 
+function reiniciarJogo() {
+    amigos = [];  
+    document.getElementById("listaAmigos").innerHTML = ""; 
+    document.getElementById("resultado").innerHTML = "";   
+    document.getElementById("amigo").value = "";           
+    document.getElementById("amigo").focus();            
+    
 }
 
 const input = document.getElementById("amigo");
@@ -55,6 +67,7 @@ input.addEventListener("keypress", function(event) {
         adicionarAmigo();
     }
 });
+
 
 
 
